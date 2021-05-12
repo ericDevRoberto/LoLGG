@@ -3,6 +3,7 @@
     package="com.example.lolgg">
 
     <application
+        android:name=".KoinApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoLGG">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.LoLGG.NoActionBar">
             <intent-filter>

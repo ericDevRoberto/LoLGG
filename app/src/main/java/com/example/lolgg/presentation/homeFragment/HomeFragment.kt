@@ -11,26 +11,25 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.lolgg.R
 import com.example.lolgg.databinding.FragmentHomeBinding
-import java.lang.reflect.Array
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class HomeFragment : Fragment() {
 
+    private val viewModel: HomeViewModel by viewModel()
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-        // Inflate the layout for this fragment
 
-        val items = resources.getStringArray(R.array.regions)
-
-        val adapter = ArrayAdapter(requireContext(), R.layout.item_textview, items)
+        val adapter = ArrayAdapter(
+            requireContext(),
+            R.layout.item_textview,
+            resources.getStringArray(R.array.regions)
+        )
 
         binding.spinnerRegions.adapter = adapter
         return binding.root
@@ -39,7 +38,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_first).setOnClickListener {
+        view.findViewById<Button>(R.id.button_search).setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
