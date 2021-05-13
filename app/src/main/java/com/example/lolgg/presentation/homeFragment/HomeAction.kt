@@ -1,6 +1,6 @@
 package com.example.lolgg.presentation.homeFragment
 
-import com.example.lolgg.model.SummonerApiProprety
+import com.example.lolgg.domain.api.SummonerApiProprety
 
 sealed class HomeAction {
 

@@ -1,4 +1,4 @@
-package com.example.lolgg.model
+package com.example.lolgg.domain.api
 
 data class SummonerApiProprety(
     val id: String,

@@ -1,8 +1,8 @@
 package com.example.lolgg.utils
 
-import com.example.lolgg.core.inicializeServiceApi
-import com.example.lolgg.domain.RiotApiService
-import com.example.lolgg.model.SummonerApiProprety
+import com.example.lolgg.core.apiServiceCore
+import com.example.lolgg.domain.api.RiotApiService
+import com.example.lolgg.domain.api.SummonerApiProprety
 import retrofit2.Response
 
 
@@ -17,7 +17,7 @@ class RiotApiImpl : RiotApiCaller {
 
         val url = "https://${region.toLowerCase()}.api.riotgames.com/lol/"
 
-        return inicializeServiceApi(url, RiotApiService::class.java).getSummonerInfo(name)
+        return apiServiceCore(url, RiotApiService::class.java).getSummonerInfo(name)
 
     }
 

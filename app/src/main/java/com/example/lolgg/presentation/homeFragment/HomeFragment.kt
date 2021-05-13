@@ -11,7 +11,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.lolgg.R
 import com.example.lolgg.databinding.FragmentHomeBinding
+import com.example.lolgg.domain.dp.SummonerTableDao
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.java.KoinJavaComponent
 
 class HomeFragment : Fragment() {
 
