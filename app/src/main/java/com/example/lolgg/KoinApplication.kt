@@ -14,9 +14,9 @@ class KoinApplication : Application() {
             androidContext(this@KoinApplication)
 
             modules(
-                listOf(
-                    viewModelModules
-                )
+
+                viewModelModules
+
             )
         }
     }

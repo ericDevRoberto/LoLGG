@@ -1,20 +1,24 @@
 <resources>
     <string name="app_name">LoLGG</string>
     <string name="action_settings">Settings</string>
+
+    <string name="api_key">RGAPI-d4d8c346-f75c-40b6-8d08-65b35ad0b4c0</string>
+
+
     <!-- Strings used for fragments for navigation -->
 
     <string-array name="regions">
-        <item>BR</item>
-        <item>EUN</item>
-        <item>EUW</item>
-        <item>JP</item>
+        <item>BR1</item>
+        <item>EUN1</item>
+        <item>EUW1</item>
+        <item>JP1</item>
         <item>KR</item>
-        <item>LA</item>
+        <item>LA1</item>
         <item>LA2</item>
-        <item>NA</item>
-        <item>OC</item>
+        <item>NA1</item>
+        <item>OC1</item>
         <item>RU</item>
-        <item>TR</item>
+        <item>TR1</item>
     </string-array>
 
     <string name="previous">Previous</string>

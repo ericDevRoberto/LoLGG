@@ -38,8 +38,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_search).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        binding.buttonSearch.setOnClickListener {
+
+            viewModel.getSummoner(
+                name = binding.textviewFirst.text.toString(),
+                region =  binding.spinnerRegions.selectedItem.toString()
+            )
+            //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
     }
 }
