@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.lolgg.R
 import com.example.lolgg.databinding.FragmentHomeBinding
@@ -48,6 +49,8 @@ class HomeFragment : Fragment() {
             )
             //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
+
+
 
     }
 }

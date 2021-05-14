@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">LoLGG</string>
     <string name="action_settings">Settings</string>
+    <!-- APIKEY -->
+    <string name="api_key">RGAPI–d4d8c346–f75c–40b6-8d08-65b35ad0b4c0</string>
 
-    <string name="api_key">RGAPI-d4d8c346-f75c-40b6-8d08-65b35ad0b4c0</string>
-
-
-    <!-- Strings used for fragments for navigation -->
-
+    <!-- Home Fragment -->
+    <string name="textview_insert_your_nick">Insert your Nick</string>
+    <string name="button_search">search</string>
     <string-array name="regions">
         <item>BR1</item>
         <item>EUN1</item>
@@ -21,7 +21,13 @@
         <item>TR1</item>
     </string-array>
 
+    <!-- Dialog Core -->
+    <string name="dialog_text_generic_title">ERROR!</string>
+    <string name="dialog_text_generic_message">An Error occurred!</string>
+    <string name="dialog_text_generic_negative_bnt">OK</string>
+
     <string name="previous">Previous</string>
 
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>

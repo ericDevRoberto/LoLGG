@@ -10,8 +10,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import com.example.lolgg.R
 import com.example.lolgg.databinding.DialogAlertDialogBinding
 
@@ -22,7 +24,7 @@ class DialogCore(
     @StringRes private val positiveBntTitle: Int? = null,
     private val onClickBntPositive: (() -> Unit)? = null,
     @StringRes private val negativeBntTitle: Int? = null,
-    private val onClickNegative: (() -> Unit)? = null
+    private val onClickBntNegative: (() -> Unit)? = null
 ) : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -71,9 +73,45 @@ class DialogCore(
             visibility = View.VISIBLE
             negativeBntTitle?.let { setText(it) }
             setOnClickListener {
-                onClickNegative?.invoke()
+                onClickBntNegative?.invoke()
                 dismissAllowingStateLoss()
             }
         }
     }
 }
+
+fun Fragment.alertDialog(
+    @StringRes title: Int = R.string.dialog_text_generic_title,
+    @StringRes message: Int = R.string.dialog_text_generic_message,
+    @StringRes positiveBntTitle: Int? = null,
+    onClickBntPositive: (() -> Unit)? = null,
+    @StringRes negativeBntTitle: Int? = R.string.dialog_text_generic_negative_bnt,
+    onClickBntNegative: (() -> Unit)? = null
+) = context?.let { context ->
+    DialogCore(
+        baseContext = context,
+        title = title,
+        message = message,
+        positiveBntTitle = positiveBntTitle,
+        onClickBntPositive = onClickBntPositive,
+        negativeBntTitle = negativeBntTitle,
+        onClickBntNegative = onClickBntNegative
+    ).show(childFragmentManager, "Dialog")
+}
+
+fun AppCompatActivity.alertDialog(
+    @StringRes title: Int = R.string.dialog_text_generic_title,
+    @StringRes message: Int = R.string.dialog_text_generic_message,
+    @StringRes positiveBntTitle: Int? = null,
+    onClickBntPositive: (() -> Unit)? = null,
+    @StringRes negativeBntTitle: Int? = R.string.dialog_text_generic_negative_bnt,
+    onClickBntNegative: (() -> Unit)? = null
+) =DialogCore(
+        baseContext = this,
+        title = title,
+        message = message,
+        positiveBntTitle = positiveBntTitle,
+        onClickBntPositive = onClickBntPositive,
+        negativeBntTitle = negativeBntTitle,
+        onClickBntNegative = onClickBntNegative
+    ).show(supportFragmentManager, "Dialog")
