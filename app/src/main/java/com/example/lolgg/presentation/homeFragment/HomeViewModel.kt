@@ -16,20 +16,24 @@ class HomeViewModel(
 
     fun getSummoner(name: String, region: String) {
 
-        CoroutineScope(Dispatchers.IO).launch {
+        if(name.isNotEmpty()){
+            CoroutineScope(Dispatchers.IO).launch {
 
-            kotlin.runCatching { riotApi.getSummoner(name, region) }
-                .onSuccess { response ->
-                    when (response.code()) {
-                        200 -> response.body()?.let { putSummonerDataBase(it, region) }
-                        404 -> mutableLiveData.postValue(HomeAction.NotFound)
-                        else -> mutableLiveData.postValue(HomeAction.DeveloperProblem)
+                kotlin.runCatching { riotApi.getSummoner(name, region) }
+                    .onSuccess { response ->
+                        when (response.code()) {
+                            200 -> response.body()?.let { putSummonerDataBase(it, region) }
+                            404 -> mutableLiveData.postValue(HomeAction.NotFound)
+                            else -> mutableLiveData.postValue(HomeAction.DeveloperProblem)
+                        }
                     }
-                }
-                .onFailure {
-                    mutableLiveData.postValue(HomeAction.InternetProblem)
-                }
+                    .onFailure {
+                        mutableLiveData.postValue(HomeAction.InternetProblem)
+                    }
+            }
         }
+        else mutableLiveData.postValue(HomeAction.EmptyEdittext)
+
     }
 
     private fun putSummonerDataBase(body: SummonerApiProprety, region: String) {

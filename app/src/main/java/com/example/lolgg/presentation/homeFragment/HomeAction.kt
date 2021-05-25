@@ -7,6 +7,7 @@ sealed class HomeAction {
     data class Success(val data: SummonerApiProprety?) : HomeAction()
     object NotFound : HomeAction()
     object DeveloperProblem : HomeAction()
+    object EmptyEdittext : HomeAction()
     object InternetProblem : HomeAction()
     data class IdFound(val puuId: String) : HomeAction()
     data class IdNotFound(val puuId: String) : HomeAction()

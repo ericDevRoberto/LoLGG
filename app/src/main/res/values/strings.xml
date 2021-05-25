@@ -10,6 +10,7 @@
     <string name="alertdialog_message_internet_erro">It can not possible connect with server</string>
     <string name="alertdialog_message_developer_erro">Please contact the Developer</string>
     <string name="alertdialog_message_not_found_erro">Summoner did not find</string>
+    <string name="alertdialog_message_empty_edittext">Put your summoner name</string>
     <string-array name="regions">
         <item>BR1</item>
         <item>EUN1</item>
@@ -32,5 +33,6 @@
     <string name="previous">Previous</string>
 
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="textview_region">Region</string>
 
 </resources>
