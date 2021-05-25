@@ -8,4 +8,6 @@ sealed class HomeAction {
     object NotFound : HomeAction()
     object DeveloperProblem : HomeAction()
     object InternetProblem : HomeAction()
+    data class IdFound(val puuId: String) : HomeAction()
+    data class IdNotFound(val puuId: String) : HomeAction()
 }

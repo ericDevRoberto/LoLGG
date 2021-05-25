@@ -7,6 +7,9 @@
     <!-- Home Fragment -->
     <string name="textview_insert_your_nick">Insert your Nick</string>
     <string name="button_search">search</string>
+    <string name="alertdialog_message_internet_erro">It can not possible connect with server</string>
+    <string name="alertdialog_message_developer_erro">Please contact the Developer</string>
+    <string name="alertdialog_message_not_found_erro">Summoner did not find</string>
     <string-array name="regions">
         <item>BR1</item>
         <item>EUN1</item>

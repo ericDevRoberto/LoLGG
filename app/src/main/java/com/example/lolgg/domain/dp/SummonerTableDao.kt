@@ -3,12 +3,19 @@ package com.example.lolgg.domain.dp
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SummonerTableDao{
 
     @Insert
     suspend fun insert(summonerTable:SummonerTable)
+
+    @Query("SELECT * FROM summoner_table ORDER BY summonerName")
+    fun getAllSummoners (): Flow<List<SummonerTable>>
+
+    @Query("SELECT * FROM summoner_table WHERE puuId = :puuId")
+    suspend fun getSummoner(puuId :String): SummonerTable
 
     @Query("SELECT * FROM summoner_table ORDER BY summonerTableId DESC LIMIT 1")
     suspend fun getLastSummonerFromTable(): SummonerTable
