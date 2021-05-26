@@ -33,7 +33,6 @@ class HomeViewModel(
             }
         }
         else mutableLiveData.postValue(HomeAction.EmptyEdittext)
-
     }
 
     private fun putSummonerDataBase(body: SummonerApiProprety, region: String) {
@@ -42,7 +41,7 @@ class HomeViewModel(
 
             kotlin.runCatching { puuIdFound.puuId == body.puuid }
                 .onSuccess {
-                    mutableLiveData.postValue(HomeAction.IdFound(body.puuid))
+                    mutableLiveData.postValue(HomeAction.Success(body.puuid))
                 }
                 .onFailure {
                     val db = SummonerTable()
@@ -55,11 +54,10 @@ class HomeViewModel(
                     db.summonerLevel = body.summonerLevel
                     db.region = region
                     summonerTableDao.insert(db)
-                    mutableLiveData.postValue(HomeAction.IdNotFound(body.puuid))
+                    mutableLiveData.postValue(HomeAction.Success(body.puuid))
                 }
         }
 
     }
-
 }
 

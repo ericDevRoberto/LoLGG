@@ -12,13 +12,19 @@
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/LoadingFragment" />
+            app:destination="@id/LoadingFragment" >
+            <argument
+                android:name="puuId"
+                app:argType="string"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/LoadingFragment"
         android:name="com.example.lolgg.presentation.loadingFragment.LoadingFragment"
         tools:layout="@layout/fragment_loading">
-
+        <argument
+            android:name="puuId"
+            app:argType="string"/>
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/HomeFragment" />
