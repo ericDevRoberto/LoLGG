@@ -7,10 +7,8 @@
     <!-- Home Fragment -->
     <string name="textview_insert_your_nick">Insert your Nick</string>
     <string name="button_search">search</string>
-    <string name="alertdialog_message_internet_erro">It can not possible connect with server</string>
-    <string name="alertdialog_message_developer_erro">Please contact the Developer</string>
-    <string name="alertdialog_message_not_found_erro">Summoner did not find</string>
-    <string name="alertdialog_message_empty_edittext">Put your summoner name</string>
+    <string name="textview_region">Region</string>
+
     <string-array name="regions">
         <item>BR1</item>
         <item>EUN1</item>
@@ -25,14 +23,25 @@
         <item>TR1</item>
     </string-array>
 
+    <!-- Loading Fragment -->
+    <string name="textview_summoner_name_loading">Summoner Name</string>
+    <string name="textview_level_loading">00</string>
+    <string name="textview_elo_name_loading">Elo Name</string>
+    <string name="textview_win_rate_loading">win rate</string>
+    <string name="textview_LP_loading">LP</string>
+    <string name="textview_queue_name_loading">Queue name</string>
+
     <!-- Dialog Core -->
     <string name="dialog_text_generic_title">ERROR!</string>
     <string name="dialog_text_generic_message">An Error occurred!</string>
     <string name="dialog_text_generic_negative_bnt">OK</string>
 
-    <string name="previous">Previous</string>
+    <!-- Dialog Errors-->
+    <string name="alertdialog_message_internet_erro">It can not possible connect with server</string>
+    <string name="alertdialog_message_developer_erro">Please contact the Developer</string>
+    <string name="alertdialog_message_not_found_erro">Summoner did not find</string>
+    <string name="alertdialog_message_empty_edittext">Put your summoner name</string>
+    <string name="button_update_loading">Update</string>
 
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="textview_region">Region</string>
 
 </resources>
