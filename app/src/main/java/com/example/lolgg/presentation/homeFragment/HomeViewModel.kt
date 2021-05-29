@@ -4,6 +4,7 @@ import com.example.lolgg.core.ViewModelCore
 import com.example.lolgg.domain.api.SummonerApiProprety
 import com.example.lolgg.domain.dp.SummonerTable
 import com.example.lolgg.domain.dp.SummonerTableDao
+import com.example.lolgg.utils.DataBaseCaller
 import com.example.lolgg.utils.RiotApiCaller
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -11,7 +12,8 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val riotApi: RiotApiCaller,
-    private val summonerTableDao: SummonerTableDao
+    //private val summonerTableDao: SummonerTableDao
+    private val dbCaller: DataBaseCaller
 ) : ViewModelCore<HomeAction>() {
 
     fun getSummoner(name: String, region: String) {
@@ -37,27 +39,16 @@ class HomeViewModel(
 
     private fun putSummonerDataBase(body: SummonerApiProprety, region: String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val puuIdFound = summonerTableDao.getSummoner(body.puuid)
-
+            val puuIdFound = dbCaller.getSummonerId(body.puuid)
             kotlin.runCatching { puuIdFound.puuId == body.puuid }
                 .onSuccess {
                     mutableLiveData.postValue(HomeAction.Success(body.puuid))
                 }
                 .onFailure {
-                    val db = SummonerTable()
-                    db.id = body.id
-                    db.accountId = body.accountId
-                    db.profileIconId = body.profileIconId
-                    db.puuId = body.puuid
-                    db.summonerName = body.name
-                    db.revisionDate = body.revisionDate
-                    db.summonerLevel = body.summonerLevel
-                    db.region = region
-                    summonerTableDao.insert(db)
+                    dbCaller.putInicialId(body = body, region = region)
                     mutableLiveData.postValue(HomeAction.Success(body.puuid))
                 }
         }
-
     }
 }
 

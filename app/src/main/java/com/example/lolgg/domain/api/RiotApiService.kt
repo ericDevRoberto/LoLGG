@@ -5,7 +5,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-private const val APIKEY = "RGAPI-a26867b0-391a-4318-8c6a-d6650d34c081"
+private const val APIKEY = "RGAPI-9d77bdff-5865-411d-a96d-47eda7f4b9ea"
 
 interface RiotApiService {
 
