@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-inline fun<T>apiServiceCore(url: String, modelClass: Class<T>): T {
+fun<T>apiServiceCore(url: String, modelClass: Class<T>): T {
 
     val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())

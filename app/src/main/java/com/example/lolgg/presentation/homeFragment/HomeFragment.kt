@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
 
     private fun goToLoading(puuId:String) {
         findNavController().navigate(
-            HomeFragmentDirections.actionFirstFragmentToSecondFragment(puuId = puuId))
+            HomeFragmentDirections.actionHomeFragmentToResult(puuId = puuId))
     }
 
     private fun dialogAlert(@StringRes message: Int) {
