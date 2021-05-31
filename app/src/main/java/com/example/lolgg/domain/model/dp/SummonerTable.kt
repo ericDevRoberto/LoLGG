@@ -1,4 +1,4 @@
-package com.example.lolgg.domain.dp
+package com.example.lolgg.domain.model.dp
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

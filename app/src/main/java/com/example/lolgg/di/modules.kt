@@ -1,9 +1,8 @@
 package com.example.lolgg.di
 
 import androidx.room.Room
-import com.example.lolgg.domain.dp.DataBase
+import com.example.lolgg.data.factory.db.DataBase
 import com.example.lolgg.presentation.homeFragment.HomeViewModel
-import com.example.lolgg.utils.DataBaseCaller
 import com.example.lolgg.utils.DataBaseCallerImpl
 import com.example.lolgg.utils.RiotApiCaller
 import com.example.lolgg.utils.RiotApiImpl

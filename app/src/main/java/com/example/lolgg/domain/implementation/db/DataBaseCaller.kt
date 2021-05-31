@@ -1,8 +1,8 @@
 package com.example.lolgg.utils
 
-import com.example.lolgg.domain.api.SummonerApiProprety
-import com.example.lolgg.domain.dp.SummonerTable
-import com.example.lolgg.domain.dp.SummonerTableDao
+import com.example.lolgg.data.repository.db.SummonerTableDao
+import com.example.lolgg.domain.model.api.SummonerApiProprety
+import com.example.lolgg.domain.model.dp.SummonerTable
 
 interface DataBaseCaller {
 

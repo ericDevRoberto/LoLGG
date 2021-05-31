@@ -1,8 +1,8 @@
 package com.example.lolgg.utils
 
 import com.example.lolgg.core.apiServiceCore
-import com.example.lolgg.domain.api.RiotApiService
-import com.example.lolgg.domain.api.SummonerApiProprety
+import com.example.lolgg.data.repository.api.RiotApiService
+import com.example.lolgg.domain.model.api.SummonerApiProprety
 import retrofit2.Response
 
 

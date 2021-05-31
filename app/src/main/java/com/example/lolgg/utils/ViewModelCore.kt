@@ -1,4 +1,4 @@
-package com.example.lolgg.core
+package com.example.lolgg.utils
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,9 +1,7 @@
 package com.example.lolgg.presentation.homeFragment
 
-import com.example.lolgg.core.ViewModelCore
-import com.example.lolgg.domain.api.SummonerApiProprety
-import com.example.lolgg.domain.dp.SummonerTable
-import com.example.lolgg.domain.dp.SummonerTableDao
+import com.example.lolgg.utils.ViewModelCore
+import com.example.lolgg.domain.model.api.SummonerApiProprety
 import com.example.lolgg.utils.DataBaseCaller
 import com.example.lolgg.utils.RiotApiCaller
 import kotlinx.coroutines.CoroutineScope

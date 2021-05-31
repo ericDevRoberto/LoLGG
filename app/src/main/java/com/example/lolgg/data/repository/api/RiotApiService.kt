@@ -1,6 +1,7 @@
-package com.example.lolgg.domain.api
+package com.example.lolgg.data.repository.api
 
 
+import com.example.lolgg.domain.model.api.SummonerApiProprety
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
