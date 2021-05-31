@@ -23,16 +23,20 @@ class HomeViewModel(
                     .onSuccess { response ->
                         when (response.code()) {
                             200 -> response.body()?.let { putSummonerDataBase(it, region) }
-                            404 -> mutableLiveData.postValue(HomeAction.NotFound)
-                            else -> mutableLiveData.postValue(HomeAction.DeveloperProblem)
+                            401 -> mutableLiveData.postValue(HomeAction.Unauthorized)
+                            403 -> mutableLiveData.postValue(HomeAction.Forbidden)
+                            404 -> mutableLiveData.postValue(HomeAction.DataNotFound)
+                            503 -> mutableLiveData.postValue(HomeAction.UnavailableService)
+                            504 -> mutableLiveData.postValue(HomeAction.GatewayTimeout)
+                            else -> mutableLiveData.postValue(HomeAction.ApiProblem)
                         }
                     }
                     .onFailure {
-                        mutableLiveData.postValue(HomeAction.InternetProblem)
+                        mutableLiveData.postValue(HomeAction.InternetError)
                     }
             }
         }
-        else mutableLiveData.postValue(HomeAction.EmptyEdittext)
+        else mutableLiveData.postValue(HomeAction.EmptyEditText)
     }
 
     private fun putSummonerDataBase(body: SummonerApiProprety, region: String) {

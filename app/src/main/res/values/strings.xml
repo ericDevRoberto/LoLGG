@@ -1,14 +1,11 @@
 <resources>
     <string name="app_name">LoLGG</string>
     <string name="action_settings">Settings</string>
-    <!-- APIKEY -->
-    <string name="api_key">RGAPI–d4d8c346–f75c–40b6-8d08-65b35ad0b4c0</string>
 
     <!-- Home Fragment -->
     <string name="textview_insert_your_nick">Insert your Nick</string>
     <string name="button_search">search</string>
     <string name="textview_region">Region</string>
-
     <string-array name="regions">
         <item>BR1</item>
         <item>EUN1</item>
@@ -30,18 +27,31 @@
     <string name="textview_win_rate_loading">win rate</string>
     <string name="textview_LP_loading">LP</string>
     <string name="textview_queue_name_loading">Queue name</string>
+    <string name="button_update_loading">Update</string>
 
     <!-- Dialog Core -->
     <string name="dialog_text_generic_title">ERROR!</string>
     <string name="dialog_text_generic_message">An Error occurred!</string>
     <string name="dialog_text_generic_negative_bnt">OK</string>
+    <string name="dialog_text_generic_try_again">Try Again</string>
+    <string name="dialog_text_generic_close">Close App</string>
 
     <!-- Dialog Errors-->
-    <string name="alertdialog_message_internet_erro">It can not possible connect with server</string>
-    <string name="alertdialog_message_developer_erro">Please contact the Developer</string>
-    <string name="alertdialog_message_not_found_erro">Summoner did not find</string>
-    <string name="alertdialog_message_empty_edittext">Put your summoner name</string>
-    <string name="button_update_loading">Update</string>
+    <string name="alertdialog_title_wrong_api_key_error">Error #401</string>
+    <string name="alertdialog_title_invalid_api_key_error">Error #403</string>
+    <string name="alertdialog_title_api_error">ERROR #1001</string>
+    <string name="alertdialog_message_developer_error">Please contact the Developer!</string>
+
+    <string name="alertdialog_title_not_found_error">Error #404</string>
+    <string name="alertdialog_message_not_found_error">Summoner did not find!</string>
+    <string name="alertdialog_title_unavailable_service_error">Error #503</string>
+    <string name="alertdialog_message_unavailable_service_error">Try again later!</string>
+    <string name="alertdialog_title_gateway_timeout_error">Error #504</string>
+    <string name="alertdialog_message_gateway_timeout_error">Try again!</string>
+    <string name="alertdialog_title_internet_error">ERROR #1002</string>
+    <string name="alertdialog_message_internet_error">Verify if your connection is OK!</string>
+    <string name="alertdialog_title_empty_edittext">ERROR #1003</string>
+    <string name="alertdialog_message_empty_edittext">Put your summoner name!</string>
 
 
 </resources>
