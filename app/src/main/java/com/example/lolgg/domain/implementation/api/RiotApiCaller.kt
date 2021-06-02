@@ -21,13 +21,13 @@ class RiotApiImpl : RiotApiCaller {
 
     }
 }
-
-sealed class ApiResponseLog{
-    data class SUCCESS(var body: SummonerApiProprety) : ApiResponseLog()
-    object INTERNET_ERROR : ApiResponseLog()
-    object DATA_NOT_FOUND : ApiResponseLog()
-    object SERVICE_UNAVALIABLE : ApiResponseLog()
-    object GATAWAY_TIMEOUT : ApiResponseLog()
-    object FORBIDDEN : ApiResponseLog()
-    object UNAUTHORIZED : ApiResponseLog()
-}
+//
+//sealed class ApiResponseLog{
+//    data class SUCCESS(var body: SummonerApiProprety) : ApiResponseLog()
+//    object INTERNET_ERROR : ApiResponseLog()
+//    object DATA_NOT_FOUND : ApiResponseLog()
+//    object SERVICE_UNAVALIABLE : ApiResponseLog()
+//    object GATAWAY_TIMEOUT : ApiResponseLog()
+//    object FORBIDDEN : ApiResponseLog()
+//    object UNAUTHORIZED : ApiResponseLog()
+//}
