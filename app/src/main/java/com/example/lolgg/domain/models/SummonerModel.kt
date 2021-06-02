@@ -1,6 +1,6 @@
-package com.example.lolgg.domain.model.api
+package com.example.lolgg.domain.models
 
-data class SummonerApiProprety(
+data class SummonerModel(
     val id: String,
     val accountId: String,
     val puuid: String,

@@ -1,7 +1,9 @@
 package com.example.lolgg.presentation.homeFragment
 
+import androidx.lifecycle.viewModelScope
 import com.example.lolgg.utils.ViewModelCore
-import com.example.lolgg.domain.model.api.SummonerApiProprety
+import com.example.lolgg.data.models.response.SummonerResponse
+import com.example.lolgg.domain.usecase.SummonerInfoUseCase
 import com.example.lolgg.utils.DataBaseCaller
 import com.example.lolgg.utils.RiotApiCaller
 import kotlinx.coroutines.CoroutineScope
@@ -10,8 +12,23 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(
     private val riotApi: RiotApiCaller,
-    private val dbCaller: DataBaseCaller
+    private val dbCaller: DataBaseCaller,
+    private val summonerInfoUseCase: SummonerInfoUseCase,
 ) : ViewModelCore<HomeAction>() {
+
+    fun getSummonerTest(name: String){
+
+        viewModelScope.launch {
+            kotlin.runCatching { summonerInfoUseCase(name) }
+                .onSuccess {
+
+                }
+                .onFailure {
+
+                }
+        }
+    }
+
 
     fun getSummoner(name: String, region: String) {
 
@@ -38,7 +55,7 @@ class HomeViewModel(
         else mutableLiveData.postValue(HomeAction.EmptyEditText)
     }
 
-    private fun putSummonerDataBase(body: SummonerApiProprety, region: String) {
+    private fun putSummonerDataBase(body: SummonerResponse, region: String) {
         CoroutineScope(Dispatchers.IO).launch {
             val puuIdFound = dbCaller.getSummonerId(body.puuid)
             runCatching { puuIdFound.puuId == body.puuid }

@@ -1,9 +1,9 @@
-package com.example.lolgg.data.repository.db
+package com.example.lolgg.data.database
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.lolgg.domain.model.dp.SummonerTable
+import com.example.lolgg.data.models.database.SummonerTable
 import kotlinx.coroutines.flow.Flow
 
 @Dao

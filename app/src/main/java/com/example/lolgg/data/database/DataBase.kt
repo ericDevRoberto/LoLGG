@@ -1,9 +1,8 @@
-package com.example.lolgg.data.factory.db
+package com.example.lolgg.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.lolgg.data.repository.db.SummonerTableDao
-import com.example.lolgg.domain.model.dp.SummonerTable
+import com.example.lolgg.data.models.database.SummonerTable
 
 @Database(
     entities = [SummonerTable::class],
