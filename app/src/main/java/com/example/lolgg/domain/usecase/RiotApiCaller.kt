@@ -2,18 +2,18 @@ package com.example.lolgg.utils
 
 import com.example.lolgg.core.apiServiceCore
 import com.example.lolgg.data.api.RiotApiService
-import com.example.lolgg.data.models.response.SummonerResponse
+import com.example.lolgg.data.models.response.UserResponse
 import retrofit2.Response
 
 
 interface RiotApiCaller {
 
-    suspend fun getSummoner(name: String, region: String): Response<SummonerResponse>
+    suspend fun getSummoner(name: String, region: String): Response<UserResponse>
 }
 
 class RiotApiImpl : RiotApiCaller {
 
-    override suspend fun getSummoner(name: String, region: String): Response<SummonerResponse> {
+    override suspend fun getSummoner(name: String, region: String): Response<UserResponse> {
 
         val url = "https://${region.toLowerCase()}.api.riotgames.com/lol/"
 
@@ -23,7 +23,7 @@ class RiotApiImpl : RiotApiCaller {
 }
 
 sealed class ApiResponseLog{
-    data class SUCCESS(var body: SummonerResponse) : ApiResponseLog()
+    data class SUCCESS(var body: UserResponse) : ApiResponseLog()
     object INTERNET_ERROR : ApiResponseLog()
     object DATA_NOT_FOUND : ApiResponseLog()
     object SERVICE_UNAVALIABLE : ApiResponseLog()

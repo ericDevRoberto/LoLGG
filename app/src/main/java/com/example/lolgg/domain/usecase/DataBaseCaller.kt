@@ -1,12 +1,12 @@
 package com.example.lolgg.utils
 
-import com.example.lolgg.data.database.SummonerTableDao
-import com.example.lolgg.data.models.response.SummonerResponse
+import com.example.lolgg.data.database.dao.SummonerTableDao
+import com.example.lolgg.data.models.response.UserResponse
 import com.example.lolgg.data.models.database.SummonerTable
 
 interface DataBaseCaller {
 
-    suspend fun putInicialId(body: SummonerResponse, region: String)
+    suspend fun putInicialId(body: UserResponse, region: String)
 
     suspend fun getSummonerId(puuId : String): SummonerTable
 }
@@ -15,7 +15,7 @@ class DataBaseCallerImpl(
     private val summonerTableDao: SummonerTableDao
 ) : DataBaseCaller{
 
-    override suspend fun putInicialId(body: SummonerResponse, region: String) {
+    override suspend fun putInicialId(body: UserResponse, region: String) {
         val db = SummonerTable()
         db.id = body.id
         db.accountId = body.accountId

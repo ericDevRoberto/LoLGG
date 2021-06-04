@@ -1,10 +1,10 @@
 package com.example.lolgg.domain.mapper
 
-import com.example.lolgg.data.models.response.SummonerResponse
-import com.example.lolgg.domain.models.SummonerModel
+import com.example.lolgg.data.models.response.UserResponse
+import com.example.lolgg.domain.models.UserModel
 
-fun SummonerResponse.mapper(): SummonerModel {
-    return SummonerModel(
+fun UserResponse.mapper(): UserModel {
+    return UserModel(
         id = this.id,
         accountId = this.accountId,
         puuid = this.puuid,

@@ -2,7 +2,7 @@ package com.example.lolgg.data.models.response
 
 import com.squareup.moshi.Json
 
-data class SummonerResponse(
+data class UserResponse(
     @Json(name = "id") val id: String,
     @Json(name = "accountId") val accountId: String,
     @Json(name = "puuid") val puuid: String,

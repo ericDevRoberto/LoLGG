@@ -88,7 +88,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getSummonerInViewModel() {
-        viewModel.getSummoner(
+        viewModel.getSummonerTest(
             name = binding.edittextSummonerName.text.toString(),
             region = binding.spinnerRegions.selectedItem.toString()
         )
