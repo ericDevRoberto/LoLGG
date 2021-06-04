@@ -1,0 +1,1 @@
+C:\Users\Eric\Desktop\Projetos\LoLGG\buildSrc\build\classes\kotlin\main\Libs.class;C:\Users\Eric\Desktop\Projetos\LoLGG\buildSrc\build\classes\kotlin\main\TestLibs.class;C:\Users\Eric\Desktop\Projetos\LoLGG\buildSrc\build\classes\kotlin\main\Versions.class
