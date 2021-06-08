@@ -8,4 +8,5 @@ sealed class UserResponseErrorHandle : Exception() {
     object ApiForbidden : Exception()
     object ApiUnauthorized : Exception()
     object ApiDeveloperProblem : Exception()
+    object EmptyEditText : Exception()
 }

@@ -35,6 +35,7 @@ class HomeViewModel(
                         ApiGatewayTimeOut -> mutableLiveData.postValue(HomeAction.GatewayTimeout)
                         ApiForbidden -> mutableLiveData.postValue(HomeAction.Forbidden)
                         ApiUnauthorized -> mutableLiveData.postValue(HomeAction.Unauthorized)
+                        EmptyEditText -> mutableLiveData.postValue(HomeAction.EmptyEditText)
                         else -> mutableLiveData.postValue(HomeAction.ApiProblem)
                     }
                 }

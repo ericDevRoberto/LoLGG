@@ -51,7 +51,7 @@
     <string name="alertdialog_title_internet_error">ERROR #1002</string>
     <string name="alertdialog_message_internet_error">Verify if your connection is OK!</string>
     <string name="alertdialog_title_empty_edittext">ERROR #1003</string>
-    <string name="alertdialog_message_empty_edittext">Put your summoner name!</string>
+    <string name="alertdialog_message_empty_edittext">Put a summoner name!</string>
 
 
 </resources>
