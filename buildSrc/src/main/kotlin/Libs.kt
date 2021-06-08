@@ -14,7 +14,7 @@ object Libs {
     const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}"
-    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}   "
+    const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
     const val koinCore = "org.koin:koin-core:${Versions.koinVersion}"
     const val koinAndroid = "org.koin:koin-android:${Versions.koinVersion}"
     const val koinScope = "org.koin:koin-android-scope:${Versions.koinVersion}"

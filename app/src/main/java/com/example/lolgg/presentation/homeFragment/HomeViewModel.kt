@@ -1,12 +1,13 @@
 package com.example.lolgg.presentation.homeFragment
 
 import androidx.lifecycle.viewModelScope
-import com.example.lolgg.utils.ViewModelCore
 import com.example.lolgg.data.models.response.UserResponse
+import com.example.lolgg.domain.models.UserResponseErrorHandle.*
 import com.example.lolgg.domain.usecase.GetSummonerUseCase
 import com.example.lolgg.domain.usecase.SummonerInfoUseCase
 import com.example.lolgg.utils.DataBaseCaller
 import com.example.lolgg.utils.RiotApiCaller
+import com.example.lolgg.utils.ViewModelCore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,17 +20,23 @@ class HomeViewModel(
 ) : ViewModelCore<HomeAction>() {
 
     fun getSummonerTest(name: String, region: String){
-
         viewModelScope.launch {
-            kotlin.runCatching { summonerInfoUseCase(name) }
+            runCatching { summonerInfoUseCase(name) }
                 .onSuccess {
-
                     val response = it
-                    var caboclo = getSummonerUseCase(response.puuid)
+                    val caboclo = getSummonerUseCase(response.puuid)
                     var chocolate = caboclo
                 }
-                .onFailure {
-                    val response = it
+                .onFailure {response ->
+                    when(response){
+                        InternetError -> mutableLiveData.postValue(HomeAction.InternetError)
+                        ApiDataNotFound -> mutableLiveData.postValue(HomeAction.DataNotFound)
+                        ApiServiceUnavailable -> mutableLiveData.postValue(HomeAction.UnavailableService)
+                        ApiGatewayTimeOut -> mutableLiveData.postValue(HomeAction.GatewayTimeout)
+                        ApiForbidden -> mutableLiveData.postValue(HomeAction.Forbidden)
+                        ApiUnauthorized -> mutableLiveData.postValue(HomeAction.Unauthorized)
+                        else -> mutableLiveData.postValue(HomeAction.ApiProblem)
+                    }
                 }
         }
     }

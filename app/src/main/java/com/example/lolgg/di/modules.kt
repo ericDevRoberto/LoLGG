@@ -18,7 +18,6 @@ import com.example.lolgg.utils.RiotApiCaller
 import com.example.lolgg.utils.RiotApiImpl
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import java.net.URL
 
 private const val NAME_DATA_BASE = "database"
 private const val URL = "https://br1.api.riotgames.com/lol/"

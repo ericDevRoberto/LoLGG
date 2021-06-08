@@ -10,7 +10,7 @@ object Versions {
     const val moshiVersion = "1.9.3"
     const val roomVersion = "2.3.0"
     const val coroutinesVersion = "1.4.2"
-    const val koinVersion = "org.koin:koin-core:2.1.6"
+    const val koinVersion = "2.1.6"
     const val multidexVersion = "1.0.3"
     const val circleImageviewVersion = "3.1.0"
     const val juintVersion = "4.13.2"

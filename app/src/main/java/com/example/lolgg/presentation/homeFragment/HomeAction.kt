@@ -1,7 +1,5 @@
 package com.example.lolgg.presentation.homeFragment
 
-import com.example.lolgg.utils.ApiResponseLog
-
 sealed class HomeAction {
 
     data class Success(val data: String) : HomeAction()
